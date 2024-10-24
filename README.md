@@ -1,7 +1,3 @@
-Here’s an improved version of your README file with clearer formatting, consistent structure, and enhanced instructions for ease of understanding.
-
----
-
 # Weather Dashboard
 
 ![Weather Dashboard](https://via.placeholder.com/800x200?text=Weather+Dashboard)
