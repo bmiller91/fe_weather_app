@@ -1,30 +1,30 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { fetchWeather, addFavorite } from "../actions/weatherActions";
-import { TextField, Button, Box, IconButton, Tooltip } from "@mui/material";
-import { FavoriteBorder } from "@mui/icons-material";
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { fetchWeather, addFavorite } from '../actions/weatherActions';
+import { TextField, Button, Box, IconButton, Tooltip } from '@mui/material';
+import { FavoriteBorder } from '@mui/icons-material';
 
 const SearchBar = () => {
-  const [city, setCity] = useState("");
+  const [city, setCity] = useState('');
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (city.trim() === "") {
-      alert("Por favor, ingresa una ciudad.");
+    if (city.trim() === '') {
+      alert('Please enter a city.');
       return;
     }
     dispatch(fetchWeather(city));
-    setCity("");
+    setCity('');
   };
 
   const handleAddFavorite = () => {
-    if (city.trim() === "") {
-      alert("Por favor, ingresa una ciudad para agregar a favoritos.");
+    if (city.trim() === '') {
+      alert('Please enter a city to add to favorites.');
       return;
     }
     dispatch(addFavorite(city));
-    setCity("");
+    setCity('');
   };
 
   return (
@@ -41,7 +41,7 @@ const SearchBar = () => {
         label="Search City"
         value={city}
         onChange={(e) => setCity(e.target.value)}
-        sx={{ width: "300px" }}
+        sx={{ width: '300px' }}
       />
       <Button variant="contained" type="submit">
         Search
